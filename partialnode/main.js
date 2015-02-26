@@ -1,7 +1,7 @@
-var app = require('express')();
+//MAKE EXPRESS APP
 
-app.use(require('body-parser')());
+//REQUIRE BODY PARSER
 
-require('./routes.js')(app);
+//REQUIRE YOUR ROUTE
 
-app.listen(5000);
+//LISTEN ON PORT 5000

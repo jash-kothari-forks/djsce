@@ -10,8 +10,8 @@ var knex = require('knex')({
 	debug: true
 });
 
+//KNOW WHAT UTILITY IS DOING AND MODEL IS DOING HERE
 var utility = require('./utility.js');
-
 
 var service = {};
 
@@ -22,90 +22,47 @@ service.getTodos = function(req, res)
 	.select('*')
 	.exec(function(err, rows)
 	{
-		if(err)
-		{
-			console.log(err);
-			return res.send({'error': 0});
-		}
-		else
-		{
-			var todoList = utility.getTodoList(rows);
-			if(todoList.length === 0)
-			{
-				return res.send({'error': "No todos"});
-			}
-			else
-			{
-				return res.send(todoList);
-			}
-		}
+		//HANDLE ERROR, AND SEND SUCCESSFUL RESPONSE
 	});
 }
 
 service.addTodo = function(req, res)
 {
 	console.log(req.body);
-	var item_desc = req.body.desc;
-
-	var todo = {};
-	todo.description = item_desc;
-	todo.date = knex.raw('now()');
+	
+	//GET THE REQ.BODY VARIABLES AND MAKE AN OBJECT TO INSERT
 
 	knex('todo_data')
-	.insert(todo)
+	.insert(/* TODO OBJECT TO INSERT */)
 	.exec(function(err, rows)
 	{
-		if(err)
-		{
-			console.log(err);
-			return res.send({'error': 'Couldn\'t add todo, please try again!'});
-		}
-		else
-		{
-			return res.send({'success': 1});
-		}
+		//RETURN ERROR OR SUCCESS
 	});
 }
 
 service.updateTodo = function(req, res)
 {
-	var updateId = req.body.id;
-	var desc = req.body.desc;
+	//GET ID AND UPDATED DESC
 
 	knex('todo_data')
-	.where('id', updateId)
-	.update({description: desc})
+	.where('id', /* THE TODO ID */)
+	.update({description: /* UPDATED DESC */})
 	.exec(function(err, rows)
 	{
-		if(err)
-		{
-			console.log(err);
-			return res.send({'error': 'Couldn\'t update todo, please try again!'});
-		}
-		else
-		{
-			return res.send({'success': 1});
-		}
+		//RETURN ERROR OR SUCCESS
 	});
 }
 
 service.deleteTodo = function(req, res)
 {
-	var deleteId = req.body.id;
+	//GET TO DELETE ID
+
 	knex('todo_data')
-	.where('id', deleteId)
+	.where('id', /* DELETE ID */)
 	.del()
 	.exec(function(err, rows)
 	{
-		if(err)
-		{
-			console.log(err);
-			return res.send({"error": "Couldn\'t delete todo, please try again!"});
-		}
-		else
-		{
-			return res.send({'success': 1});
-		}
+		//RETURN ERROR OR SUCCESS
 	});
 }
 

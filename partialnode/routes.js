@@ -1,15 +1,9 @@
-var core = require('./core.js');
+//REQUIRE CORE
 
 module.exports = function(app)
 {
 
 	//All Server Routes go here
-	app.post('/gettodos', core.getTodos);
 
-	app.post('/addtodo', core.addTodo);
-
-	app.post('/updatetodo', core.updateTodo);
-
-	app.post('/deletetodo', core.deleteTodo);
-
+	//MAKE ROUTES FOR GETALL, ADD UPDATE DELETE
 }
