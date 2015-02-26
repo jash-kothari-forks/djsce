@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">DJSCE Workshop</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_name_add">NameActivity</string>
+	<string name="add_name">Hello, please add your name!</string>
+	<string name="intro_name">Before we begin, please enter your name:</string>
+	<string name="your_name_home">Your Name (3 to 20 characters)</string>
+	<string name="name_error_case">The name is too short!</string>
+	<string name="name_error_case_long">The name is too long!</string>
+	<string name="update_todo_text">Update Todo</string>
+	<string name="add_todo_text">Add Todo</string>
+
+</resources>

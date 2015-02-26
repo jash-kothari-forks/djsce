@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			  android:orientation="horizontal"
+			  android:layout_width="match_parent"
+			  android:layout_height="70dp"
+			  android:weightSum="10"
+			  android:background="@color/todo_item_bg"
+			  android:layout_margin="7dp"
+	>
+
+	<!--MAKE TEXTVIEW FOR ITEM DESC-->
+
+	<!--IMAGEBUTTON FOR EDIT, WITH ICONS AND BACKGROUND SET TO NULL-->
+	<!--ADJUSTVIEWBOUNDS=TRUE-->
+
+	<!--SAME AS ABOVE, WITH DELETE ICON AND BUTTON-->
+
+</LinearLayout>
